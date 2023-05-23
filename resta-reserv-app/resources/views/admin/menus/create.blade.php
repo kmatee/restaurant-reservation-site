@@ -39,7 +39,7 @@
                             <div class="mt-1">
                                 <input type="number" min="0" max="100000" step="10" id="price" name="price">
                            </div>
-                            @error('description')
+                            @error('price')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
@@ -62,9 +62,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                            @error('description')
-                                <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror
                         </div>
                         <div class="mt-6 p-4">
                             <button type="submit"
