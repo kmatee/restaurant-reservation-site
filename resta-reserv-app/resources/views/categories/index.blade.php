@@ -7,7 +7,9 @@
                   alt="Image" />
                 <div class="px-6 py-4">
 
-                  <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">{{ $category->name }}</h4>
+                  <a href="{{ route('categories.show', $category->id) }}">
+                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 hover:text-green-400 uppercase">{{ $category->name }}</h4>
+                  </a>
                 </div>
               </div>
             @endforeach
