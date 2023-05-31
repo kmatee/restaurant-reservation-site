@@ -39,9 +39,15 @@ class ReservationController extends Controller
         if($request->guest_number > $table->guest_number){
             return back()->with('warning', 'Choose a table that have enough seats');
         }
+        $request_date = Carbon::parse($request->reservation_date);
+        foreach ($table->reservations as $res){
+            if(Carbon::parse($res->reservation_date)->format('Y-m-d H') == $request_date->format('Y-m-d H')){
+                return back()->with('warning', 'This table is reserved for this date');
+            }
+        }
         Reservation::create($request->validated());
 
-        return to_route('admin.reservations.index')->with('success', 'Reservation created successfully.');
+        return to_route('admin.reservations.index')->with('success', 'Reservation created successfully');
     }
     
 
