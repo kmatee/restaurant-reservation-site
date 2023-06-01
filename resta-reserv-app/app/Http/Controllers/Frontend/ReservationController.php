@@ -28,7 +28,7 @@ class ReservationController extends Controller
             'first_name' => ['required'],
             'last_name' => ['required'],
             'email' => ['required', 'email'],
-            'res_date' => ['required', 'date', new DateBetween, new TimeBetween],
+            'reservation_date' => ['required', 'date', new DateBetween, new TimeBetween],
             'tel_number' => ['required'],
             'guest_number' => ['required'],
         ]);
@@ -52,6 +52,7 @@ class ReservationController extends Controller
         $res_table_ids = Reservation::orderBy('reservation_date')->get()->filter(function ($value) use ($reservation) {
             return Carbon::parse($value->reservation_date)->format('Y-m-d') == Carbon::parse($reservation->reservation_date)->format('Y-m-d');
         })->pluck('table_id');
+        
         $tables = Table::where('status', TableStatus::Available)
             ->where('guest_number', '>=', $reservation->guest_number)
             ->whereNotIn('id', $res_table_ids)->get();
