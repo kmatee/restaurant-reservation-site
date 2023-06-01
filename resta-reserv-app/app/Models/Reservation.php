@@ -19,7 +19,7 @@ class Reservation extends Model
         'guest_number'
     ];
 
-    protected $casts = [
+    protected $dates = [
         'reservation_date'
     ];
 
