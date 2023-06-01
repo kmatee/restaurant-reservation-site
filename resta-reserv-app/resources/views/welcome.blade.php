@@ -2,12 +2,12 @@
     <!-- Main Hero Content -->
     <div
       class="container max-w-lg px-4 py-32 mx-auto text-left bg-center bg-no-repeat bg-cover md:max-w-none md:text-center"
-      style="background-image: url('https://cdn.pixabay.com/photo/2016/11/18/14/39/beans-1834984_960_720.jpg')">
+      style="background-image: url('https://eatkc.com/wp-content/uploads/2019/01/Italian.jpg')">
       <h1
-        class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-green-600 md:text-center sm:leading-none lg:text-5xl">
+        class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white md:text-center sm:leading-none lg:text-5xl">
         <span class="inline md:block">Welcome To Gustavo Pizzeria webpage</span>
       </h1>
-      <div class="mx-auto mt-2 text-green-50 md:text-center lg:text-lg">
+      <div class="mx-auto mt-2 text-white md:text-center lg:text-lg">
         The best family owned Italian Resaturant in Budapest.
       </div>
       <div class="flex flex-col items-center mt-12 text-center">
@@ -32,9 +32,8 @@
               <h2 class="text-4xl text-green-600">Welcome</h2>
               <!-- </h1> -->
               <p class="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nemo incidunt praesentium, ipsum
-                culpa minus eveniet, id nesciunt excepturi sit voluptate repudiandae. Explicabo, incidunt quia.
-                Repellendus mollitia quaerat est voluptas!
+                The restaurant was founded in 1968 by my immigrant grandfather. It took him and our family a lot of hard work to get to this point.
+                Now we are one of the most awarded Italian restaurant in Budapest!
               </p>
               
             </div>
