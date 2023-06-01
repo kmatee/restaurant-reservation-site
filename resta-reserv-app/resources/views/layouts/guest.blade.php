@@ -46,7 +46,7 @@
                     <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
                         href="{{ route('menus.index') }}">Our Menu</a>
                     <a class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400"
-                        href="{{ route('reservation.step.one') }}">Make Reservation</a>
+                        href="{{ route('reservations.step.one') }}">Make Reservation</a>
     
                 </div>
             </nav>

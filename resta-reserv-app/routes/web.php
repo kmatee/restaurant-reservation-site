@@ -28,10 +28,10 @@ Route::get('/',[WelcomeController::class, 'index']);
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
-Route::get('/reservations/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservation.step.one');
-Route::get('/reservations/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservation.step.two');
-Route::post('/reservations/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservation.store.step.one');
-Route::post('/reservations/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservation.store.step.two');
+Route::get('/reservations/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservations.step.one');
+Route::post('/reservations/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservations.store.step.one');
+Route::get('/reservations/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
+Route::post('/reservations/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
 
 
 
