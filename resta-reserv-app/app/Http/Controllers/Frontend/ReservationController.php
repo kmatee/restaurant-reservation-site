@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use App\Rules\DateBetween;
 use App\Rules\TimeBetween;
 use Carbon\Carbon;
@@ -29,5 +30,18 @@ class ReservationController extends Controller
             'table_id' => ['required'],
             'guest_number' => ['required'],
         ]);
+
+        if(empty($request->session()->get('reservation'))){
+            $reservation = new Reservation();
+            $reservation->fill($validated);
+            $request->session()->pull('reservation', $reservation);
+        }
+        else {
+            $reservation = $request->session()->get('reservation');
+            $reservation->fill($validated);
+            $request->session()->pull('reservation', $reservation);
+        }
+
+        return to_route('reservations.step.two');
     }
 }
