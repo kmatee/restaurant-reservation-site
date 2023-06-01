@@ -32,7 +32,7 @@ Route::get('/reservations/step-one', [FrontendReservationController::class, 'ste
 Route::post('/reservations/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservations.store.step.one');
 Route::get('/reservations/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
 Route::post('/reservations/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
-
+Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 
 Route::get('/dashboard', function () {
