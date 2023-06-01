@@ -61,7 +61,16 @@ class ReservationController extends Controller
 
     public function storeStepTwo(Request $request)
     {
-        
+        $validated = $request->validate([
+            'table_id' =>['required'],
+        ]);
+        $reservation = $request->session()->get('reservation');
+        $reservation->fill($validated);
+        $reservation->save();
+        $request->session()->forget('reservation');
+
+        return to_route('thankyou');
+
     }
 }
 
