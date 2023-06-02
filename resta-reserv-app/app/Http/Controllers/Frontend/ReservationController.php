@@ -38,12 +38,10 @@ class ReservationController extends Controller
             $reservation = new Reservation();
             $reservation->fill($validated);
             $request->session()->put('reservation', $reservation);
-            //dd(session()->get('reservation'));
         } else {
             $reservation = $request->session()->get('reservation');
             $reservation->fill($validated);
             $request->session()->put('reservation', $reservation);
-            //dd(session());
         }
 
         return to_route('reservations.step.two');
@@ -52,7 +50,6 @@ class ReservationController extends Controller
     public function stepTwo(Request $request)
     {
         $reservation = $request->session()->get('reservation');
-        //dd(session());
         $res_table_ids = Reservation::orderBy('reservation_date')->get()->filter(function ($value) use ($reservation) {
             return Carbon::parse($value->reservation_date)->format('Y-m-d') == Carbon::parse($reservation->reservation_date)->format('Y-m-d');
         })->pluck('table_id');
