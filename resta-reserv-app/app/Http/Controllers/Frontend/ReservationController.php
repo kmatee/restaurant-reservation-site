@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Enums\TableStatus;
 use App\Http\Controllers\Controller;
+use App\Mail\ReservationMail;
 use App\Models\Reservation;
 use App\Models\Table;
 use App\Rules\DateBetween;
 use App\Rules\TimeBetween;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Session;
@@ -68,6 +70,8 @@ class ReservationController extends Controller
         $reservation = $request->session()->get('reservation');
         $reservation->fill($validated);
         $reservation->save();
+        $email = $reservation->email;
+        Mail::to($email)->send(new ReservationMail($reservation));
         $request->session()->forget('reservation');
 
         return to_route('thankyou');
