@@ -26,6 +26,7 @@
                     @csrf
                   </form>
                   <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                  <a href="{{ route('cart.index') }}">Shopping Cart</a>
                 @endif
                 
               </div>
