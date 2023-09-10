@@ -57,7 +57,7 @@ class CartController extends Controller
         \Cart::session($user_id);
         \Cart::remove($id);
 
-        //return redirect()->route('cart.index');
+        return redirect()->back();
 
     }
 
@@ -69,7 +69,7 @@ class CartController extends Controller
             'quantity' => 1,
         ));
 
-        //return redirect()->route('cart.index');
+        return redirect()->back();
     }
 
     public function decreaseQty($id)
@@ -80,7 +80,7 @@ class CartController extends Controller
             'quantity' => -1,
         ));
 
-        //return redirect()->route('cart.index');
+        return redirect()->back();
     }
 
 }
