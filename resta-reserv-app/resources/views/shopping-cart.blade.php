@@ -1,28 +1,14 @@
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Document</title>
-</head>
-<body>
-    {{$items}}
+<x-guest-layout>
     <div class="h-screen bg-gray-100 pt-20">
       <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
       <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
         <div class="rounded-lg md:w-2/3">
             @foreach ($items as $item)
           <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-            <img src="{{ asset($item->attributes->image) }}" alt="product-image" class="w-full rounded-lg sm:w-40" />
+            @php
+                $imagePath = str_replace('\\', '', $item->attributes->image);
+            @endphp
+            <img src="{{ asset(stripslashes($item->attributes->image)) }}" alt="product-image" class="w-full rounded-lg sm:w-40" />
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
               <div class="mt-5 sm:mt-0">
                 <h2 class="text-lg font-bold text-gray-900">{{$item->name }}</h2>
@@ -69,5 +55,4 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+</x-guest-layout>
