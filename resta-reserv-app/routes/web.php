@@ -23,7 +23,7 @@ use App\Http\Controllers\Frontend\ReservationController as FrontendReservationCo
 |
 */
 
-Route::get('/',[WelcomeController::class, 'index']);
+Route::get('/',[WelcomeController::class, 'index'])->name('home');
 
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');

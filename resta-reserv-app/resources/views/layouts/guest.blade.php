@@ -17,11 +17,24 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="bg-white shadow-md" x-data="{ isOpen: false }">
             <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
+              <div class="left-0 top-0">
+                @if (!Auth::user())
+                  <a href="{{ route('login') }}" class="p-2">Login</a>
+                  <a href="{{ route('register') }}">Register</a>
+                @else
+                  <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                  </form>
+                  <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                @endif
+                
+              </div>
                 <div class="flex items-center justify-between">
                     <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 md:text-2xl hover:text-green-400"
                         href="/">
                         Gustavo Pizzeria
                     </a>
+                    
                     <!-- Mobile menu button -->
                     <div @click="isOpen = !isOpen" class="flex md:hidden">
                         <button type="button"
