@@ -14,9 +14,9 @@ class CartController extends Controller
             $user_id = auth()->user()->id;
         }
         else{
-            session()->flash('flash.banner','You have to login or register to view your cart');
-            session()->flash('flash.bannerStyle', 'danger');
-            return redirect()->route('home');
+            //session()->flash('flash.banner','You have to login or register to view your cart');
+            //session()->flash('flash.bannerStyle', 'danger');
+            return redirect()->back()->with('danger', 'Login view your cart');
         }
         \Cart::session($user_id);
         $items = \Cart::getContent();
@@ -31,9 +31,9 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         if (!auth()->check()) {
-            session()->flash('flash.banner','You have to login or register to add items to your cart');
-            session()->flash('flash.bannerStyle', 'danger');
-            return redirect()->route('home');
+            //session()->flash('flash.banner','You have to login or register to add items to your cart');
+            //session()->flash('flash.bannerStyle', 'danger');
+            return redirect()->back()->with('danger', 'Login to add item to your cart');
         }
         else {
             $user_id = auth()->user()->id;
