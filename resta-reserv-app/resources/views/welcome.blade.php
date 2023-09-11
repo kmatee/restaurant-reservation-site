@@ -34,7 +34,9 @@
                         </g>
             </svg>
         </a>
+        @if (isset($num_of_items) && $num_of_items > 0)
         <span class="bg-red-100 text-white text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-white">{{$num_of_items}}</span>
+        @endif
       </div>
       <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
         <div class="flex flex-wrap items-center sm:-mx-3">
