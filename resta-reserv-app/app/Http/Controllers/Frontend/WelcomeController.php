@@ -15,7 +15,6 @@ class WelcomeController extends Controller
             \Cart::session($user_id);
             $items = \Cart::getContent();
             $num_of_items = $items->count();
-            //dd($num_of_items);
         }
 
         $specials = Category::where('name', 'specials')->first();
