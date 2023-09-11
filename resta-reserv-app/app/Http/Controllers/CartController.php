@@ -38,13 +38,13 @@ class CartController extends Controller
         else {
             $user_id = auth()->user()->id;
             $menuItem = Menu::find($request->input('menu_id'));
-
+            $imagePath = str_replace('public', 'storage', $menuItem->image);
             \Cart::session($user_id)->add(array(
                 'id' => $menuItem->id,
                 'name' => $menuItem->name,
                 'price' => $menuItem->price,
                 'quantity' => 1,
-                'attributes' => array('image' => $menuItem->image), 
+                'attributes' => array('image' => $imagePath), 
             ));
         }
 
