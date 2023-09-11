@@ -26,6 +26,7 @@
                     @csrf
                   </form>
                   <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                  <a href="{{ route('cart.index') }}">Shopping Cart</a>
                 @endif
                 
               </div>
@@ -64,6 +65,26 @@
                 </div>
             </nav>
         </div>
+        <div>
+          @if (session()->has('danger'))
+              <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800"
+                  role="alert">
+                  <span class="font-medium">{{ session()->get('danger') }}!</span>
+              </div>
+          @endif
+          @if (session()->has('success'))
+              <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+                  role="alert">
+                  <span class="font-medium">{{ session()->get('success') }}!</span>
+              </div>
+          @endif
+          @if (session()->has('warning'))
+              <div class="p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+                  role="alert">
+                  <span class="font-medium">{{ session()->get('warning') }}!</span>
+              </div>
+          @endif
+      </div>
         <div class="font-sans text-gray-900 antialiased min-h-screen">
             {{ $slot }}
         </div>

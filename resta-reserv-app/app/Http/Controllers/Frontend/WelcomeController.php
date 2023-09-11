@@ -10,8 +10,15 @@ class WelcomeController extends Controller
 {
     public function index()
     {
+        if(auth()->check()){
+            $user_id = auth()->user()->id;
+            \Cart::session($user_id);
+            $items = \Cart::getContent();
+            $num_of_items = $items->count();
+        }
+
         $specials = Category::where('name', 'specials')->first();
-        return view('welcome', compact('specials'));
+        return view('welcome', compact('specials', 'num_of_items'));
     }
 
     public function thankyou()
