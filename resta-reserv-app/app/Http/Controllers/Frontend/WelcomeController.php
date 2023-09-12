@@ -16,6 +16,9 @@ class WelcomeController extends Controller
             $items = \Cart::getContent();
             $num_of_items = $items->count();
         }
+        else {
+            $num_of_items = 0;
+        }
 
         $specials = Category::where('name', 'specials')->first();
         return view('welcome', compact('specials', 'num_of_items'));
