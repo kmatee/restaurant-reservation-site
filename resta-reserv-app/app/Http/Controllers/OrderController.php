@@ -23,4 +23,17 @@ class OrderController extends Controller
         return view('order-confirm', compact('items', 'num_of_items', 'total'));
     }
 
+    public function processOrder(Request $request)
+    {
+        $orderDetails = [
+            "first_name" => $request->input('first_name'),
+            "last_name" => $request->input('last_name'),
+            "address" => $request->input('address'),
+            "zip_code" => $request->input('zip_code'),
+            "country" => $request->input('country'),
+        ];
+
+        return view('checkout', compact('orderDetails'));
+    }
+
 }
