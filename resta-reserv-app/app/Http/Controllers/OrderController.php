@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+
     public function index()
     {
         if(auth()->check()){
@@ -13,11 +14,13 @@ class OrderController extends Controller
             \Cart::session($user_id);
             $items = \Cart::getContent();
             $num_of_items = $items->count();
+            $total = \Cart::getTotal();
         }
         else{
             return redirect()->route('home')->with('danger', 'You need to be logged in');
         }
 
-        return view('order-confirm', compact('items', 'num_of_items'));
+        return view('order-confirm', compact('items', 'num_of_items', 'total'));
     }
+
 }
