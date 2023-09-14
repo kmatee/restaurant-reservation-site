@@ -45,6 +45,8 @@ Route::get('/cart/decrease/{id}', [CartController::class, 'decreaseQty'])->name(
 
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 
+Route::post('/order-confirm', [OrderController::class, 'processOrder'])->name('order-confirm');
+
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 
