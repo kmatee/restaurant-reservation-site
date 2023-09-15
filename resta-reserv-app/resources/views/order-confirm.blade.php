@@ -51,19 +51,28 @@
                        </div>
                        
                     </div>
-                    @error('first_name')
+                     @error('first_name')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
-                        @enderror
+                     @enderror
+                     @error('last_name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                     @enderror
                     <label class=" font-semibold text-gray-600 text-xs py-2">Phone number<abbr title="required">*</abbr></label>
                     <div class="flex flex-wrap items-stretch w-full mb-4 relative">
                        <input type="tel" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-1 h-10 border-grey-light rounded-lg rounded-l-1 px-3 relative focus:border-blue focus:shadow" placeholder="(+36...)" name="phone_number">
                     </div>
+                    @error('phone_number')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                     @enderror
                  </div>
                  <div class="mb-3 space-y-2 w-full text-xs">
                     <label class="font-semibold text-gray-600 py-2">Address<abbr title="required">*</abbr></label>
                     <div class="flex flex-wrap items-stretch w-full mb-4 relative">
                        <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-1 h-10 border-grey-light rounded-lg rounded-l-1 px-3 relative focus:border-blue focus:shadow" placeholder="City, address" name="address">
                     </div>
+                    @error('address')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                     @enderror
                  </div>
                  <div class="md:flex md:flex-row md:space-x-4 w-full text-xs">
                     <div class="w-full flex flex-col mb-3">
@@ -81,6 +90,12 @@
                        <p class="text-sm text-red-500 hidden mt-3" id="error">Please fill out this field.</p>
                     </div>
                  </div>
+                  @error('zip_code')
+                     <div class="text-sm text-red-400">{{ $message }}</div>
+                  @enderror
+                  @error('country')
+                     <div class="text-sm text-red-400">{{ $message }}</div>
+                  @enderror
                  <div class="flex-auto w-full mb-1 text-xs space-y-2">
                     <label class="font-semibold text-gray-600 py-2">Additional information for shipping</label>
                     <textarea name="message" id="" class="w-full min-h-[100px] max-h-[300px] h-28 appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg  py-4 px-4" placeholder="Enter extra information" spellcheck="false"></textarea>
