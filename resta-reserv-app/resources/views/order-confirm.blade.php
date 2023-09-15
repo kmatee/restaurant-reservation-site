@@ -23,8 +23,9 @@
         </div>
       </div>
      @endforeach
-     <div class="rounded-lg md:w-2/3">
-        <h2>Total: {{ $total }}</h2>
+     <div class="flex justify-between">
+         <a href="{{ route('cart.index') }}" class="text-sm underline text-blue-500 left-0 top-0">Go back to cart</a>
+         <h2 class="mb-10 text-2xl text-right font-bold">Total: {{ $total }} Ft</h2>
      </div>
   </div>
   <!-- component -->
