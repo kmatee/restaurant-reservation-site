@@ -40,15 +40,20 @@
                     <div class="md:flex flex-row md:space-x-4 w-full text-xs">
                        <div class="mb-3 space-y-2 w-full text-xs">
                           <label class="font-semibold text-gray-600 py-2">First  Name <abbr title="required">*</abbr></label>
-                          <input placeholder="First Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="first_name" id="first_name">
+                          <input placeholder="First Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" name="first_name" id="first_name">
                           <p class="text-red text-xs hidden">Please fill out this field.</p>
                        </div>
+                        
                        <div class="mb-3 space-y-2 w-full text-xs">
                           <label class="font-semibold text-gray-600 py-2">Last Name <abbr title="required">*</abbr></label>
-                          <input placeholder="Last Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" required="required" type="text" name="last_name" id="last_name">
+                          <input placeholder="Last Name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4" type="text" name="last_name" id="last_name">
                           <p class="text-red text-xs hidden">Please fill out this field.</p>
                        </div>
+                       
                     </div>
+                    @error('first_name')
+                                <div class="text-sm text-red-400">{{ $message }}</div>
+                        @enderror
                     <label class=" font-semibold text-gray-600 text-xs py-2">Phone number<abbr title="required">*</abbr></label>
                     <div class="flex flex-wrap items-stretch w-full mb-4 relative">
                        <input type="tel" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border border-l-1 h-10 border-grey-light rounded-lg rounded-l-1 px-3 relative focus:border-blue focus:shadow" placeholder="(+36...)" name="phone_number">
@@ -67,7 +72,7 @@
                     </div>
                     <div class="w-full flex flex-col mb-3">
                        <label class="font-semibold text-gray-600 py-2">Country<abbr title="required">*</abbr></label>
-                       <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " required="required" name="country" id="country">
+                       <select class="block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 md:w-full " name="country" id="country">
                           <option value="Hungary">Hungary</option>
                           <option value="Germany">Germany</option>
                           <option value="France">France</option>
