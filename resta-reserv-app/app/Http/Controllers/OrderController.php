@@ -25,6 +25,15 @@ class OrderController extends Controller
 
     public function processOrder(Request $request)
     {
+
+        $request->validate([
+            "first_name" => ['required', 'max:30'],
+            "last_name" => ['required', 'max:30'],
+            "phone_number" => ['required'],
+            "address" => ['required', 'max:50'],
+            "country" => ['required'],
+        ]);
+
         $orderDetails = [
             "first_name" => $request->input('first_name'),
             "last_name" => $request->input('last_name'),
