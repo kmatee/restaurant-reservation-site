@@ -31,6 +31,7 @@ class OrderController extends Controller
             "last_name" => ['required', 'max:30'],
             "phone_number" => ['required'],
             "address" => ['required', 'max:50'],
+            "zip_code" => ['required', 'numeric'],
             "country" => ['required'],
         ]);
 
