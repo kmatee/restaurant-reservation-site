@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -44,8 +45,9 @@ Route::get('/cart/increase/{id}', [CartController::class, 'increaseQty'])->name(
 Route::get('/cart/decrease/{id}', [CartController::class, 'decreaseQty'])->name('cart.decrease');
 
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
-
 Route::post('/order-confirm', [OrderController::class, 'processOrder'])->name('order-confirm');
+Route::post('/checkout-confirm', [CheckoutController::class, 'store'])->name('checkout-confirm');
+Route::get('/thankyou-order', [CheckoutController::class, 'index'])->name('thankyou-order');
 
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
