@@ -33,5 +33,17 @@
             </div>
         </div>
     </div>
-    
+    <div class="mt-5 text-left md:space-x-3 md:block flex flex-col-reverse pl-5">
+        <form action="">
+            <input type="hidden" value="{{$orderDetails["first_name"]}}" name="first_name">
+            <input type="hidden" value="{{$orderDetails["last_name"]}}" name="last_name">
+            <input type="hidden" value="{{$orderDetails["phone_number"]}}" name="phone_number">
+            <input type="hidden" value="{{$orderDetails["country"]}}" name="country">
+            <input type="hidden" value="{{$orderDetails["zip_code"]}}" name="zip_code">
+            <input type="hidden" value="{{$orderDetails["address"]}}" name="address">
+            <input type="hidden" value="{{$items}}" name="items">
+            <input type="hidden" value="{{$total}}" name="total">
+            <button type="submit" class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider bg-blue-500 text-blue-50 hover:bg-blue-600 rounded-md">Next Step</button>
+        </form>
+    </div>
 </x-guest-layout>
