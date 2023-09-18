@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->string('address');
             $table->integer('zip_code');
             $table->string('country');
-            $table->string('items');
+            $table->json('items');
             $table->integer('total');
             $table->timestamps();
         });
