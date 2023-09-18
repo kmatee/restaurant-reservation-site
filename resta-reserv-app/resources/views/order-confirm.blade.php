@@ -104,7 +104,7 @@
                     asterisk <abbr title="Required field">*</abbr>
                  </p>
                  <div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
-                    <button type="submit" class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider bg-blue-500 text-blue-50 hover:bg-blue-600 rounded-md">Confirm</button>
+                    <button type="submit" class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider bg-blue-500 text-blue-50 hover:bg-blue-600 rounded-md">Save</button>
                  </div>
               </div>
             </form>
