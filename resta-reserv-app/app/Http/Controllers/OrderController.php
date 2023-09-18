@@ -38,12 +38,19 @@ class OrderController extends Controller
         $orderDetails = [
             "first_name" => $request->input('first_name'),
             "last_name" => $request->input('last_name'),
+            "phone_number" => $request->input('phone_number'),
             "address" => $request->input('address'),
             "zip_code" => $request->input('zip_code'),
             "country" => $request->input('country'),
         ];
 
-        return view('checkout', compact('orderDetails'));
+            $user_id = auth()->user()->id;
+            \Cart::session($user_id);
+            $items = \Cart::getContent();
+            $num_of_items = $items->count();
+            $total = \Cart::getTotal();
+
+        return view('checkout', compact('orderDetails', 'items', 'total'));
     }
 
 }
