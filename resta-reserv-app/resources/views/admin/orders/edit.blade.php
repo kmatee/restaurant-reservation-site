@@ -61,7 +61,7 @@
                             @enderror
                         </div>
                         <div class="sm:col-span-6">
-                            <label for="zip_code" class="block text-sm font-medium text-gray-700"> Guest Number
+                            <label for="zip_code" class="block text-sm font-medium text-gray-700"> Zip Code
                             </label>
                             <div class="mt-1">
                                 <input type="number" id="zip_code" name="zip_code" value="{{ $order->zip_code }}"
@@ -72,7 +72,7 @@
                             @enderror
                         </div>
                         <div class="sm:col-span-6">
-                            <label for="address" class="block text-sm font-medium text-gray-700"> Phone Number </label>
+                            <label for="address" class="block text-sm font-medium text-gray-700"> Address </label>
                             <div class="mt-1">
                                 <input type="text" id="address" name="address" value="{{ $order->address }}"
                                     class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
