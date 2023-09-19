@@ -53,9 +53,18 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Order $order)
     {
-        //
+        $order->update($request->validate([
+            "first_name" => ['required', 'max:30'],
+            "last_name" => ['required', 'max:30'],
+            "phone_number" => ['required'],
+            "address" => ['required', 'max:50'],
+            "zip_code" => ['required', 'numeric'],
+            "country" => ['required'],
+        ]));
+
+        return to_route('admin.orders.index')->with('success', 'Order updated successfully');
     }
 
     /**
