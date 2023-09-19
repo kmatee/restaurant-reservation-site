@@ -61,8 +61,9 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return to_route('admin.orders.index')->with('success', 'Order deleted successfully');
     }
 }
