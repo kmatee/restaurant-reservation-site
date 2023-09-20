@@ -37,9 +37,11 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Order $order)
     {
-        //
+        $items = json_decode($order->items, true);
+
+        return view('admin.orders.items.index', compact('items'));
     }
 
     /**
@@ -75,4 +77,12 @@ class OrderController extends Controller
         $order->delete();
         return to_route('admin.orders.index')->with('success', 'Order deleted successfully');
     }
+
+    public function showItems(Order $order)
+    {
+        $items = $order->items;
+
+        return view('admin.orders.items.index', compact('items'));
+    }
+
 }
