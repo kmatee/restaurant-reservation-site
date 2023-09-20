@@ -73,6 +73,7 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::get('/items{order}', [ItemsController::class, 'index'])->name('items.index');
     Route::get('/item/{orderId}/{itemId}/edit', [ItemsController::class, 'edit'])->name('items.edit');
     Route::get('/item/{orderId}/{itemId}/update', [ItemsController::class, 'update'])->name('items.update');
+    Route::delete('/item/{orderId}/{itemId}/delete', [ItemsController::class, 'destroy'])->name('items.delete');
 
 });
 
