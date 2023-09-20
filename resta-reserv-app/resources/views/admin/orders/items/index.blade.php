@@ -45,7 +45,7 @@
                         <a href="{{route('admin.items.edit',['orderId' => $order->id, 'itemId' => $item["id"]])}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
                         <form
                             method="POST"
-                            action=""
+                            action="{{route('admin.items.delete', ['orderId' => $order->id, 'itemId' => $item["id"]])}}"
                             onsubmit="return confirm('Are you sure?');"
                             class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white">
                             @csrf
