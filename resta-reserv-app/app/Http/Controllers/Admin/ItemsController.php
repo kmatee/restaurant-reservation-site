@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class ItemsController extends Controller
 {
+    public function getNewTotal($items)
+    {
+        $newTotal = 0;
+        foreach ($items as $item) {
+            $newTotal += $item['price'] * $item['quantity'];
+        }
+
+        return $newTotal;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -71,10 +80,13 @@ class ItemsController extends Controller
 
         $encodedItems = json_encode($items);
         $order->items = $encodedItems;
+        $order->total = $this->getNewTotal($items);
         $order->save();
 
         return to_route('admin.items.index', $order)->with('success', 'Order updated successfully');
     }
+
+    
 
     /**
      * Remove the specified resource from storage.
