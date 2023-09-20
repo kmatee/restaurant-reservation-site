@@ -60,7 +60,7 @@
                                     {{ $order->address }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{route('admin.orders.show', $order->id)}}" class="underline hover:text-white">Items</a>
+                                    <a href="{{route('admin.items.index', $order->id)}}" class="underline hover:text-white">Items</a>
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $order->total }}
