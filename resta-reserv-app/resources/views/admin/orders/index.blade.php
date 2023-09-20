@@ -63,7 +63,7 @@
                                     <a href="{{route('admin.items.index', $order->id)}}" class="underline hover:text-white">Items</a>
                                 </td>
                                 <td class="px-6 py-4">
-                                    {{ $order->total }}
+                                    {{ $order->total }} Ft
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $order->created_at }}
