@@ -71,7 +71,9 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::resource('/reservations', ReservationController::class);
     Route::resource('/orders', \App\Http\Controllers\Admin\OrderController::class);
     Route::get('/items{order}', [ItemsController::class, 'index'])->name('items.index');
-    Route::get('/item/{orderId}/edit/{itemId}', [ItemsController::class, 'edit'])->name('items.edit');
+    Route::get('/item/{orderId}/{itemId}/edit', [ItemsController::class, 'edit'])->name('items.edit');
+    Route::get('/item/{orderId}/{itemId}/update', [ItemsController::class, 'update'])->name('items.update');
+
 });
 
 require __DIR__.'/auth.php';
