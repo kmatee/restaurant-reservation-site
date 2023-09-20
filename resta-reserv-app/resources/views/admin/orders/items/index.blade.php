@@ -6,6 +6,11 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <div class="flex pb-2">
+        <a href="{{ route('admin.orders.index') }}"
+            class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Back to orders
+        </a>
+    </div>
     <table class="w-1/2 text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
