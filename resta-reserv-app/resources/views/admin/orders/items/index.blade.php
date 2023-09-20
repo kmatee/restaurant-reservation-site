@@ -18,7 +18,7 @@
                 <th scope="col" class="px-6 py-3">
                     Quantity
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-3 py-3">
                     Action
                 </th>
             </tr>
@@ -32,10 +32,10 @@
                 <td class="px-6 py-4">
                     {{$item['price']}}
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-6 py-4 text-center">
                     {{$item['quantity']}}
                 </td>
-                <td class="px-6 py-4">
+                <td class="px-3 py-4">
                     <div class="flex space-x-2">
                         <a href="" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
                         <form
