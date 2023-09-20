@@ -37,7 +37,7 @@
                 </td>
                 <td class="px-3 py-4">
                     <div class="flex space-x-2">
-                        <a href="" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
+                        <a href="{{route('admin.items.edit',['orderId' => $order->id, 'itemId' => $item["id"]])}}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
                         <form
                             method="POST"
                             action=""
