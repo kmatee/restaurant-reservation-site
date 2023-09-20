@@ -14,7 +14,7 @@ class ItemsController extends Controller
     public function index(Order $order)
     {
         $items = json_decode($order->items, true);
-        return view('admin.orders.items.index', compact('items'));
+        return view('admin.orders.items.index', compact('items', 'order'));
     }
 
     /**
@@ -44,9 +44,16 @@ class ItemsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($orderId, $itemId)
     {
-        
+        $order = Order::find($orderId);
+
+        $items = json_decode($order->items, true);
+
+        if(isset($items[$itemId])){
+            $quantity = $items[$itemId]['quantity'];
+        }
+        return view('admin.orders.items.edit', compact('quantity'));
     }
 
     /**
