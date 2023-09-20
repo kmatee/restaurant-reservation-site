@@ -53,15 +53,27 @@ class ItemsController extends Controller
         if(isset($items[$itemId])){
             $quantity = $items[$itemId]['quantity'];
         }
-        return view('admin.orders.items.edit', compact('quantity'));
+        return view('admin.orders.items.edit', compact('quantity', 'itemId', 'orderId'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$orderId, $itemId)
     {
-        //
+        $order = Order::find($orderId);
+        $items = json_decode($order->items, true);
+        $newQuantity = $request->input('quantity');
+
+        if (isset($items[$itemId])) {
+            $items[$itemId]['quantity'] = $newQuantity;
+        }
+
+        $encodedItems = json_encode($items);
+        $order->items = $encodedItems;
+        $order->save();
+
+        return to_route('admin.items.index', $order)->with('success', 'Order updated successfully');
     }
 
     /**
