@@ -83,7 +83,7 @@ class ItemsController extends Controller
         $order->total = $this->getNewTotal($items);
         $order->save();
 
-        return to_route('admin.items.index', $order)->with('success', 'Order updated successfully');
+        return to_route('admin.items.index', $order)->with('success', 'Item updated successfully');
     }
 
     
@@ -91,8 +91,20 @@ class ItemsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($orderId, $itemId)
     {
-        //
+        $order = Order::find($orderId);
+        $items = json_decode($order->items, true);
+
+        if (isset($items[$itemId])) {
+            unset($items[$itemId]);
+        }
+
+        $encodedItems = json_encode($items);
+        $order->items = $encodedItems;
+        $order->total = $this->getNewTotal($items);
+        $order->save();
+
+        return to_route('admin.items.index', $order)->with('success', 'Item deleted successfully');
     }
 }
