@@ -16,7 +16,7 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        /* $validated = $request->validate([
             "first_name" => ['required', 'max:30'],
             "last_name" => ['required', 'max:30'],
             "phone_number" => ['required'],
@@ -25,13 +25,23 @@ class CheckoutController extends Controller
             "country" => ['required'],
             "items" => ['required'],
             "total" => ['required'],
+        ]); */
+        $order = Order::create([
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'phone_number' => $request->input('phone_number'),
+            'address' => $request->input('address'),
+            'zip_code' => $request->input('zip_code'),
+            'country' => $request->input('country'),
+            'items' => $request->input('items'),
+            'total' => $request->input('total'),
         ]);
         
-        $order = Order::create($validated);
+        
         //dd($order);
         $email = auth()->user()->email;
         Mail::to($email)->send(new OrderConfirmationMail($order));
 
-        return to_route('thankyou-order');
+        return view('thankyou-order');
     }
 }
