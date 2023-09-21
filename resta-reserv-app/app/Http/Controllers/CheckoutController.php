@@ -11,7 +11,7 @@ class CheckoutController extends Controller
 {
     public function index()
     {
-        return view('thankyou');
+        return view('thankyou-order');
     }
 
     public function store(Request $request)
