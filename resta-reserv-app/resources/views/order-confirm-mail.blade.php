@@ -69,6 +69,9 @@
                                 <th>
                                     Quantity
                                 </th>
+                                <th>
+                                    Total
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,6 +85,9 @@
                                 </td>
                                 <td>
                                     {{$item->quantity}}
+                                </td>
+                                <td>
+                                    {{$order->total}} Ft
                                 </td>
                             </tr>
                             @endforeach
