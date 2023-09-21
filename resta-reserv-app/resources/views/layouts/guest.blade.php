@@ -20,7 +20,7 @@
               <div class="left-0 top-0">
                 @if (!Auth::user())
                   <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Login</a>
-                  <a href="{{ route('register') }}">Register</a>
+                  <a href="{{ route('register') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Register</a>
                 @else
                   <form id="logout-form" method="POST" action="{{ route('logout') }}">
                     @csrf
