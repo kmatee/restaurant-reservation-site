@@ -17,42 +17,13 @@ class ItemsController extends Controller
 
         return $newTotal;
     }
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(Order $order)
     {
         $items = json_decode($order->items, true);
         return view('admin.orders.items.index', compact('items', 'order'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($orderId, $itemId)
     {
         $order = Order::find($orderId);
@@ -65,9 +36,6 @@ class ItemsController extends Controller
         return view('admin.orders.items.edit', compact('quantity', 'itemId', 'orderId'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request,$orderId, $itemId)
     {
         $order = Order::find($orderId);
@@ -86,11 +54,6 @@ class ItemsController extends Controller
         return to_route('admin.items.index', $order)->with('success', 'Item updated successfully');
     }
 
-    
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($orderId, $itemId)
     {
         $order = Order::find($orderId);

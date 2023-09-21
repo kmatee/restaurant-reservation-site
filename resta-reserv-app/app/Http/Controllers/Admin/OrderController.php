@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $orders = Order::all();
@@ -18,25 +16,6 @@ class OrderController extends Controller
         return view('admin.orders.index', compact('orders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Order $order)
     {
         $items = json_decode($order->items, true);
@@ -44,17 +23,13 @@ class OrderController extends Controller
         return view('admin.orders.items.index', compact('items'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Order $order)
     {
         return view('admin.orders.edit', compact('order'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Order $order)
     {
         $order->update($request->validate([
@@ -69,9 +44,7 @@ class OrderController extends Controller
         return to_route('admin.orders.index')->with('success', 'Order updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Order $order)
     {
         $order->delete();
