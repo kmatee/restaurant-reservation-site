@@ -79,7 +79,7 @@
                         type="text" placeholder="Full Name">
                 </div>
         
-                <form action="{{route('checkout-confirm')}}" method="POST">
+                <form action="{{route('payment')}}" method="POST">
                     @csrf
                     <input type="hidden" value="{{$orderDetails["first_name"]}}" name="first_name">
                     <input type="hidden" value="{{$orderDetails["last_name"]}}" name="last_name">
