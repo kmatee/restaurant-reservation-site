@@ -6,12 +6,29 @@ use App\Mail\OrderConfirmationMail;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CheckoutController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('thankyou-order');
+        $stripe = new \Stripe\StripeClient(env('STRIPE_SK'));
+        $sessionId = $request->get('session_id');
+        
+        
+        try {
+            $session = $stripe->checkout->sessions->retrieve($sessionId);
+            if (!$session){
+                throw new NotFoundHttpException;
+            }
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException;
+        }
+        
+
+        //$customer = $stripe->customers->retrieve($session->customer);
+
+        return view('thankyou-order', compact('sessionId'));
     }
 
     public function store(Request $request)
