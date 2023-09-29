@@ -21,14 +21,20 @@ class CheckoutController extends Controller
             if (!$session){
                 throw new NotFoundHttpException;
             }
+            
+            $order = Order::where('session_id', $session->id)->where('status', 'unpaid')->first();
+
+            if (!$order){
+                throw new NotFoundHttpException;
+            }
+            $order->status = 'paid';
+            $order->save();
+
+            return view('thankyou-order', compact('sessionId'));
+
         } catch (\Exception $e) {
             throw new NotFoundHttpException;
         }
-        
-
-        //$customer = $stripe->customers->retrieve($session->customer);
-
-        return view('thankyou-order', compact('sessionId'));
     }
 
     public function store(Request $request)
