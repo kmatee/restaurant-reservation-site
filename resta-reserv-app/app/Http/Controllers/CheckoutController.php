@@ -10,6 +10,12 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CheckoutController extends Controller
 {
+    public function clearCart()
+    {
+        $user_id = auth()->user()->id;
+        \Cart::session($user_id)->clear();
+    }
+
     public function index(Request $request)
     {
         $stripe = new \Stripe\StripeClient(env('STRIPE_SK'));
@@ -29,6 +35,8 @@ class CheckoutController extends Controller
             }
             $order->status = 'paid';
             $order->save();
+
+            $this->clearCart();
 
             return view('thankyou-order', compact('sessionId'));
 
