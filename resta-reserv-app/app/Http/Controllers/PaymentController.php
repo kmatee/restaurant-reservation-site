@@ -41,11 +41,9 @@ class PaymentController extends Controller
         $checkout_session = $stripe->checkout->sessions->create([
             'line_items' => $lineItems,
             'mode' => 'payment',
-            'success_url' => route('thankyou-order'),
+            'success_url' => route('thankyou-order', [], true)."?session_id={CHECKOUT_SESSION_ID}",
             'cancel_url' => 'http://localhost:4242/success',
         ]);
-
-        //dd($checkout_session->id);
 
         $order = Order::create([
             'first_name' => $request->input('first_name'),
