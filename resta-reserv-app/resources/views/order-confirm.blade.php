@@ -1,6 +1,4 @@
 <x-guest-layout>
-  {{$items}}
-  {{$num_of_items}}
   <div class="h-screen bg-gray-100 pt-20">
     <h1 class="mb-10 text-left pl-20 text-2xl font-bold">Order summary</h1>
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
