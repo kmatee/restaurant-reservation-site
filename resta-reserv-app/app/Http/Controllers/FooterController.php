@@ -36,7 +36,7 @@ class FooterController extends Controller
 
         Mail::to('kant.mate@gmail.com')->send(new ContactMail($data));
 
-        return redirect()->back()->with('success', 'Your message has been sent successfully.');
+        return redirect()->back()->with('success', 'Your message has been sent successfully. We will contact you back soon');
 
 
     }
