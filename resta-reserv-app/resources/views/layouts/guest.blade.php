@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class="font-sans text-gray-900 antialiased flex flex-col min-h-screen">
         <div class="bg-white shadow-md" x-data="{ isOpen: false }">
             <nav class="container py-8 mx-auto md:flex md:justify-between md:items-center">
               <div class="left-0 top-0">
