@@ -102,7 +102,7 @@
                     <li>About</li>
                   </a>
 
-                  <a href="">
+                  <a href="{{route('contact')}}">
                     <li>Contact</li>
                   </a>
                   
