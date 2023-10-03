@@ -94,7 +94,7 @@
               <div class="flex flex-wrap justify-center">
                 <ul class="flex items-center space-x-4 text-white">
 
-                  <a href="">
+                  <a href="{{route('home')}}">
                     <li>Home</li>
                   </a>
 
