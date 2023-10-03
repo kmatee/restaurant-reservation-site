@@ -57,7 +57,8 @@ Route::get('/thankyou-order', [CheckoutController::class, 'index'])->name('thank
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 Route::get('/contact', [FooterController::class, 'contact'])->name('contact');
-Route::post('/contact-email', [FooterController::class, 'contactEmail'])->name('contact-email');
+Route::post('/contact', [FooterController::class, 'contactEmail'])->name('contact-email');
+
 Route::get('/about', [FooterController::class, 'about'])->name('about');
 
 Route::get('/dashboard', function () {
