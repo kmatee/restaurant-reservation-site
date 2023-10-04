@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
@@ -49,13 +50,16 @@ Route::get('/cart/decrease/{id}', [CartController::class, 'decreaseQty'])->name(
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 Route::post('/order-confirm', [OrderController::class, 'processOrder'])->name('order-confirm');
 Route::post('/checkout-confirm', [CheckoutController::class, 'store'])->name('checkout-confirm');
-
 Route::post('/payment', [PaymentController::class, 'payment'])->name('payment');
 
 Route::get('/thankyou-order', [CheckoutController::class, 'index'])->name('thankyou-order');
 
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
+Route::get('/contact', [FooterController::class, 'contact'])->name('contact');
+Route::post('/contact', [FooterController::class, 'contactEmail'])->name('contact-email');
+
+Route::get('/about', [FooterController::class, 'about'])->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
