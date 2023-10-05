@@ -34,6 +34,10 @@ The admin user can access the admin dashboard where these can be managed (add ne
     - at this point the order is saved in the database but the status is set to *unpaid*
     - after a successful checkout the customer receives an email about their order info and the order status is changed to *paid* in the database
     At this point of the development the checkout should **only be made with a dummy card** (e.g.: 4242 4242 4242 4242, the other info can be anything)
+
+    ### Contact management
+    At the bottom of the page in the footer section there are a couple menu points such as *Contact*
+    After filling out the form and click on the ***Send Message*** button an email will be sent to the management with the filled out info.
     
 ## Features for admin users
 The admin username and password can be set trough a seeder in the backend code. The dashboard can be accessed trough *localhost:8000/admin* after logging in with the admin user.
