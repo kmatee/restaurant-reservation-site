@@ -98,7 +98,7 @@
                     <li>Home</li>
                   </a>
 
-                  <a href="">
+                  <a href="{{route('about')}}">
                     <li>About</li>
                   </a>
 
