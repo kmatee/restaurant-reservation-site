@@ -40,4 +40,9 @@ class FooterController extends Controller
 
 
     }
+
+    public function about()
+    {
+        return view('footer.about');
+    }
 }
