@@ -64,7 +64,7 @@
         </div>
       </div>
     </section>
-
+    @if($specials)
     <section class="mt-8 bg-white">
       <div class="mt-4 text-center">
         <h3 class="text-2xl font-bold">Our Menu</h3>
@@ -73,6 +73,7 @@
       </div>
       <div class="container w-full px-5 py-6 mx-auto">
         <div class="grid lg:grid-cols-4 gap-y-6">
+        
         @foreach ($specials->menus as $menu )
           <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
             <img class="w-full h-48" src="{{ Storage::url($menu->image) }}"
@@ -91,9 +92,11 @@
             </div>
           </div>
         @endforeach
+        
         </div>
       </div>
     </section>
+    @endif
 
 
     <section class="pt-4 pb-12 bg-gray-800">
