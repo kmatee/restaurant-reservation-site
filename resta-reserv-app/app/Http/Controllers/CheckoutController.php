@@ -37,6 +37,8 @@ class CheckoutController extends Controller
             $order->save();
 
             $this->clearCart();
+            $email = auth()->user()->email;
+            Mail::to($email)->send(new OrderConfirmationMail($order));
 
             return view('thankyou-order', compact('sessionId'));
 
@@ -59,8 +61,7 @@ class CheckoutController extends Controller
             'total' => $request->input('total'),
         ]);
         
-        $email = auth()->user()->email;
-        Mail::to($email)->send(new OrderConfirmationMail($order));
+
 
         return view('thankyou-order');
     }
