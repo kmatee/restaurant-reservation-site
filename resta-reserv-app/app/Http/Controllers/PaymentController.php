@@ -42,7 +42,7 @@ class PaymentController extends Controller
             'line_items' => $lineItems,
             'mode' => 'payment',
             'success_url' => route('thankyou-order', [], true)."?session_id={CHECKOUT_SESSION_ID}",
-            'cancel_url' => 'http://localhost:4242/success',
+            'cancel_url' => route('cart'),
         ]);
 
         $order = Order::create([
