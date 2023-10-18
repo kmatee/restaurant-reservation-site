@@ -99,15 +99,15 @@
     @endif
 
 
-    <section class="pt-4 pb-12 bg-gray-800">
+    <section class="pt-4 pb-12 px-8 md: bg-gray-800">
       <div class="my-16 text-center">
         <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
           Reviews </h2>
         <p class="text-xl text-white">Some reviews from our dear customers</p>
       </div>
-      <div class="grid gap-2 lg:grid-cols-3">
+      <div class="grid gap-2 lg:grid-cols-3 place-items-center">
         <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
-          <div class="flex justify-center -mt-16 md:justify-end">
+          <div class="flex justify-center -mt-16">
             <img class="object-cover w-20 h-20 border-2 border-green-500 rounded-full"
               src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
           </div>
@@ -120,7 +120,7 @@
           </div>
         </div>
         <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
-          <div class="flex justify-center -mt-16 md:justify-end">
+          <div class="flex justify-center -mt-16">
             <img class="object-cover w-20 h-20 border-2 border-green-500 rounded-full"
               src="https://cdn.pixabay.com/photo/2018/01/04/21/15/young-3061652__340.jpg">
           </div>
@@ -133,7 +133,7 @@
           </div>
         </div>
         <div class="max-w-md p-4 bg-white rounded-lg shadow-lg">
-          <div class="flex justify-center -mt-16 md:justify-end">
+          <div class="flex justify-center -mt-16">
             <img class="object-cover w-20 h-20 border-2 border-green-500 rounded-full"
               src="https://cdn.pixabay.com/photo/2018/01/18/17/48/purchase-3090818__340.jpg">
           </div>
