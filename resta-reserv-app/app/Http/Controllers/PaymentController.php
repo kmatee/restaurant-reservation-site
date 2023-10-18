@@ -37,14 +37,20 @@ class PaymentController extends Controller
                 'quantity' => $item->quantity,
             ];
         }
-
-        $checkout_session = $stripe->checkout->sessions->create([
-            'line_items' => $lineItems,
-            'mode' => 'payment',
-            'success_url' => route('thankyou-order', [], true)."?session_id={CHECKOUT_SESSION_ID}",
-            'cancel_url' => route('cart'),
-        ]);
-
+        try{
+            
+            $checkout_session = $stripe->checkout->sessions->create([
+                'line_items' => $lineItems,
+                'mode' => 'payment',
+                'success_url' => route('thankyou-order', [], true)."?session_id={CHECKOUT_SESSION_ID}",
+                'cancel_url' => route('cart.index'),
+            ]);
+            
+        }
+        catch(\Stripe\Exception\InvalidRequestException $e){
+            return to_route('home')->with('danger', 'Your shopping cart is empty. This page is not accessible');
+        }
+        
         $order = Order::create([
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
