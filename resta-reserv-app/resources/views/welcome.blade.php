@@ -72,7 +72,7 @@
           TODAY'S SPECIALITY</h2>
       </div>
       <div class="container w-full px-5 py-6 mx-auto">
-        <div class="grid lg:grid-cols-4 gap-y-6">
+        <div class="grid lg:grid-cols-4 gap-y-6 place-items-center">
         
         @foreach ($specials->menus as $menu )
           <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
