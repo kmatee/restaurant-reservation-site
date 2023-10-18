@@ -17,21 +17,29 @@
     <body class="font-sans text-gray-900 antialiased flex flex-col min-h-screen">
         <div class="bg-white shadow-md" x-data="{ isOpen: false }">
             <nav class="container py-8 mx-auto md:flex md:justify-between md:items-center">
-              <div class="left-0 top-0">
+              <div class="left-0 top-0 flex pl-2">
                 @if (!Auth::user())
+                <div>
                   <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Login</a>
+                </div>
+                <div>
                   <a href="{{ route('register') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Register</a>
+                </div>
                 @else
                   <form id="logout-form" method="POST" action="{{ route('logout') }}">
                     @csrf
                   </form>
-                  <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Logout</a>
-                  <a href="{{ route('cart.index') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Shopping Cart</a>
+                  <div>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 pr-3">Logout</a>
+                  </div>
+                  <div>
+                    <a href="{{ route('cart.index') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Shopping Cart</a>
+                  </div>
                 @endif
                 
               </div>
                 <div class="flex items-center justify-between">
-                    <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 md:text-2xl hover:text-green-400"
+                    <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 md:text-2xl hover:text-green-400 pl-2"
                         href="/">
                         Gustavo Pizzeria
                     </a>
@@ -51,7 +59,7 @@
                 </div>
     
                 <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-                <div :class="isOpen ? 'flex' : 'hidden'"
+                <div :class="isOpen ? 'flex pl-2' : 'hidden'"
                     class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
                     <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400"
                         href="/">Home</a>
