@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="flex justify-between">
-        <div class="md:w-1/2">
+    <div class="flex justify-center content-center">
+        <div class="w-1/2">
             <div class="rounded-lg pt-10">
                 <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
                     <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
