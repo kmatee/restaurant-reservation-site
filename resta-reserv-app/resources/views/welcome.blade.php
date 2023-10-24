@@ -1,7 +1,7 @@
 <x-guest-layout>
     <!-- Main Hero Content -->
     <div
-      class="container max-w-lg px-4 py-32 items-center mx-auto text-center bg-center bg-no-repeat bg-cover md:max-w-none md:text-center sm:max-v-none sm:text-center"
+      class="container px-4 py-32 items-center mx-auto text-center bg-center bg-no-repeat sm:bg-cover max-w-none md:max-w-none md:text-center sm:text-center"
       style="background-image: url('https://eatkc.com/wp-content/uploads/2019/01/Italian.jpg')">
       <h1
         class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white md:text-center sm:leading-none lg:text-4xl">
