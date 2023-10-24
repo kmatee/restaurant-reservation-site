@@ -20,7 +20,7 @@
               <div class="left-0 top-0 flex pl-2">
                 @if (!Auth::user())
                 <div>
-                  <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Login</a>
+                  <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r pr-3 from-red-400 to-green-500 hover:text-green-400">Login</a>
                 </div>
                 <div>
                   <a href="{{ route('register') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Register</a>
