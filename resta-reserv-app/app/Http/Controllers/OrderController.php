@@ -16,7 +16,7 @@ class OrderController extends Controller
             $num_of_items = $items->count();
             $total = \Cart::getTotal();
             if($num_of_items == 0){
-                return redirect()->route('home')->with('danger', 'You cannot checkout with an empty cart!');
+                return redirect()->route('home')->with('danger', 'You cannot checkout with an empty cart');
             }
         }
         else{
