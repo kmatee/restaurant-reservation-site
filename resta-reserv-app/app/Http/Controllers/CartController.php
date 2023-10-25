@@ -14,7 +14,7 @@ class CartController extends Controller
             $user_id = auth()->user()->id;
         }
         else{
-            return redirect()->back()->with('danger', 'Login view your cart');
+            return redirect()->back()->with('danger', 'Login to view your cart');
         }
         \Cart::session($user_id);
         $items = \Cart::getContent();
