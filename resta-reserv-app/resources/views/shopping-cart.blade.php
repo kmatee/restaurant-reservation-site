@@ -1,7 +1,6 @@
 <x-guest-layout>
     <div class="h-screen bg-gray-100 pt-20">
       @if(count($items) == 0)
-      {{$items}}
       <div class="static pt-12 text-center">
         <div class="inline-block rounded-lg bg-gray-100 p-12">
           <h2 class="text-xl font-bold">Your shopping cart is empty!</h2>
@@ -9,7 +8,6 @@
         </div>
       </div>
       @else
-      {{$items}}
       <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
       <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
         <div class="rounded-lg md:w-2/3">
