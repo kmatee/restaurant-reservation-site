@@ -34,7 +34,11 @@ class ReservationController extends Controller
         }
         $request_date = Carbon::parse($request->reservation_date);
         foreach ($table->reservations as $res){
-            if(Carbon::parse($res->reservation_date)->format('Y-m-d H') == $request_date->format('Y-m-d H')){
+            /* if(Carbon::parse($res->reservation_date)->addHours(2)->format('Y-m-d') == $request_date->format('Y-m-d')){
+                return back()->with('warning', 'This table is reserved for this date');
+            } */
+            $existingReservationDate = Carbon::parse($res->reservation_date);
+            if($request_date->diffInHours($existingReservationDate) < 2){
                 return back()->with('warning', 'This table is reserved for this date');
             }
         }
