@@ -11,7 +11,7 @@
                 <a href="{{ route('admin.tables.create') }}" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">New Table</a>
             </div>
             <div class="flex flex-col">
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg hidden sm:block">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg hidden lg:block">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-800 dark:bg-gray-8
                         00 dark:text-gray-400">
@@ -70,7 +70,7 @@
                     </table>
                 </div>
                 <!-- Mobile view table -->
-                <div class="grid grid-cols-1 gap-4 md:hidden sm:hidden">
+                <div class="grid grid-cols-1 gap-4 lg:hidden">
                     @foreach ($tables as $table)
                     <div class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 rounded-lg shadow">
                         <div class="space-x-3 text-xs text-gray-100 space-y-2">
