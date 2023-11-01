@@ -8,9 +8,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-col">
-                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg hidden sm:block">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Name
@@ -93,6 +93,49 @@
                             
                         </tbody>
                     </table>
+                </div>
+                <!-- Mobile view table -->
+                <div class="grid grid-cols-1 gap-4 md:hidden sm:hidden">
+                    @foreach ($orders as $order)
+                    <div class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 rounded-lg shadow">
+                        <div class="space-x-3 text-xs text-gray-100 space-y-2">
+                            <div class="pl-3 pt-2 text-white uppercase text-sm flex justify-between">
+                                <div>{{ $order->first_name }} {{$order->last_name}}</div>
+                                <div class="pr-2">{{ $order->total }} Ft</div>
+                            </div>
+                            <div class="">                              
+                                {{ $order->country }}
+                                {{ $order->zip_code }}
+                                {{ $order->address }}
+                            <div>
+                                {{ $order->phone_number }}
+                            <div class="pt-2">
+                                <a href="{{route('admin.items.index', $order->id)}}" class="underline hover:text-white">Items</a>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="pr-12 uppercase">
+                                    {{ $order->status }}
+                                </div>
+                                <div>
+                                    <div class="flex space-x-2 pr-2 pb-2">
+                                        <a href="{{ route('admin.orders.edit', $order->id) }}" class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">Edit</a>
+                                        <form
+                                            method="POST"
+                                            action="{{ route('admin.orders.destroy', $order->id) }}"
+                                            onsubmit="return confirm('Are you sure?');"
+                                            class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>      
         </div>
