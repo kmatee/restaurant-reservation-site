@@ -34,13 +34,12 @@ class ReservationController extends Controller
         }
         $request_date = Carbon::parse($request->reservation_date);
         foreach ($table->reservations as $res){
-            /* if(Carbon::parse($res->reservation_date)->addHours(2)->format('Y-m-d') == $request_date->format('Y-m-d')){
-                return back()->with('warning', 'This table is reserved for this date');
-            } */
+            //Compares if any existing reservation is within 2 hours of the current reservation attempt
             $existingReservationDate = Carbon::parse($res->reservation_date);
             if($request_date->diffInHours($existingReservationDate) < 2){
-                return back()->with('warning', 'This table is reserved for this date');
+                return back()->with('warning', 'This table is reserved for this date and hour (Reservations are reserved for two hours)');
             }
+
         }
         Reservation::create($request->validated());
 
@@ -64,8 +63,9 @@ class ReservationController extends Controller
         $request_date = Carbon::parse($request->reservation_date);
         $reservations = $table->reservations()->where('id', '!=', $reservation->id)->get();
         foreach ($reservations as $res){
-            if(Carbon::parse($res->reservation_date)->format('Y-m-d H') == $request_date->format('Y-m-d H')){
-                return back()->with('warning', 'This table is reserved for this date');
+            $existingReservationDate = Carbon::parse($res->reservation_date);
+            if($request_date->diffInHours($existingReservationDate) < 2){
+                return back()->with('warning', 'This table is reserved for this date and hour (Reservations are reserved for two hours)');
             }
         }
         $reservation->update($request->validated());
