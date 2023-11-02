@@ -18,7 +18,7 @@
                                 <th scope="col" class="px-6 py-3">
                                     Menu Item
                                 </th>
-                                <th scope="col" class="px-6 py-3">
+                                <th scope="col" class="px-6 py-3 w-32">
                                     Image
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -39,7 +39,7 @@
                                         {{ $menu->name }}
                                     </td>
                                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded">
+                                        <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded object-cover">
                                     </td>
                                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $menu->description }}
@@ -75,7 +75,7 @@
                                 {{ $menu->name }} - <span class="text-xs">{{$menu->price}} Ft</span>
                             </div>
                             <div class="">
-                                <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded shrink-0">
+                                <img src="{{ Storage::url($menu->image) }}" class="w-16 h-16 rounded object-cover">
                             </div>
                             <div class="flex justify-between">
                                 <div class="pr-12 bottom-0">
