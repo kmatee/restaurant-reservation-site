@@ -1,9 +1,9 @@
 <x-guest-layout>
     <div class="container w-full px-6 py-6 mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-y-6 place-items-center">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-4 place-items-center">
             @foreach ($categories as $category)
-            <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-                <img class="w-full h-48" src="{{ Storage::url($category->image) }}"
+            <div class="max-w-xs w-full mx-4 mb-2 rounded-lg shadow-lg">
+                <img class="w-full object-cover h-48 rounded-lg" src="{{ Storage::url($category->image) }}"
                   alt="Image" />
                 <div class="px-6 py-4">
 
