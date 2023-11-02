@@ -29,49 +29,61 @@ use App\Http\Controllers\CartController;
 |
 */
 
+//Route for home page
 Route::get('/',[WelcomeController::class, 'index'])->name('home');
 
+//Route for categories page and for menu items in a category 
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 
+//Route for menu items page
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 
+//Routes for the reservation processes
 Route::get('/reservations/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservations.step.one');
 Route::post('/reservations/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservations.store.step.one');
 Route::get('/reservations/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
 Route::post('/reservations/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
 
+//Routes for shopping cart processes
 Route::post('/cart',[CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/cart/increase/{id}', [CartController::class, 'increaseQty'])->name('cart.increase');
 Route::get('/cart/decrease/{id}', [CartController::class, 'decreaseQty'])->name('cart.decrease');
 
+//Routes for checkout processes
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
 Route::post('/order-confirm', [OrderController::class, 'processOrder'])->name('order-confirm');
 Route::post('/checkout-confirm', [CheckoutController::class, 'store'])->name('checkout-confirm');
 Route::post('/payment', [PaymentController::class, 'payment'])->name('payment');
 
+//Route for thank you page after successful payment
 Route::get('/thankyou-order', [CheckoutController::class, 'index'])->name('thankyou-order');
 
+//Route for thank you page after successful reservation
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
+//Route for contact page
 Route::get('/contact', [FooterController::class, 'contact'])->name('contact');
+//Route for email sending on contact page
 Route::post('/contact', [FooterController::class, 'contactEmail'])->name('contact-email');
+//Route for about page with map
 Route::get('/about', [FooterController::class, 'about'])->name('about');
 
-Route::get('/about', [FooterController::class, 'about'])->name('about');
-
+//Auth route for admin dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Auth route for profile management
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Auth routes for admin dashboard processes
 Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::resource('/categories', CategoryController::class);
