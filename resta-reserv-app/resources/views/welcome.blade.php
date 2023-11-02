@@ -114,7 +114,7 @@
           </div>
           <div>
             <h2 class="text-3xl font-semibold text-gray-800">Pizza</h2>
-            <p class="mt-2 text-gray-600">I had one of the best pizza of my life at Gustavos. I can only recommend this place!</p>
+            <p class="mt-2 text-gray-600 h-16">I had one of the best pizza of my life at Gustavos. I can only recommend this place!</p>
           </div>
           <div class="flex justify-end mt-4">
             <a href="#" class="text-xl font-medium text-green-500">John Doe</a>
@@ -127,7 +127,7 @@
           </div>
           <div>
             <h2 class="text-3xl font-semibold text-gray-800">Pasta</h2>
-            <p class="mt-2 text-gray-600">The homemade pastas here are excellent. It's just like my grandma's!</p>
+            <p class="mt-2 text-gray-600 h-16">The homemade pastas here are excellent. It's just like my grandma's!</p>
           </div>
           <div class="flex justify-end mt-4">
             <a href="#" class="text-xl font-medium text-green-500">Erica Wells</a>
@@ -140,7 +140,7 @@
           </div>
           <div>
             <h2 class="text-3xl font-semibold text-gray-800">Atmosphere</h2>
-            <p class="mt-2 text-gray-600">The atmosphere is just amazing at Gustavos. Very cozy and warm. The service was excellent too!</p>
+            <p class="mt-2 text-gray-600 h-16">The atmosphere is just amazing at Gustavos. Very cozy and warm. The service was excellent too!</p>
           </div>
           <div class="flex justify-end mt-4">
             <a href="#" class="text-xl font-medium text-green-500">Melinda Watson</a>
