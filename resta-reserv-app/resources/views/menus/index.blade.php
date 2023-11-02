@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="container w-full px-5 py-6 mx-auto">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 place-items-center">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-4 place-items-center">
             @foreach ($menus as $menu )
             <div class="max-w-xs w-full mx-4 mb-2 px-4 rounded-lg shadow-lg">
               <img class="object-cover w-full h-48 rounded-lg" src="{{ Storage::url($menu->image) }}"
