@@ -73,15 +73,15 @@
           TODAY'S SPECIALITY</h2>
       </div>
       <div class="container w-full px-5 py-6 mx-auto">
-        <div class="grid lg:grid-cols-4 gap-y-6 place-items-center">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 gap-x-4 place-items-center">
         
         @foreach ($specials->menus as $menu )
-          <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
-            <img class="w-full h-48" src="{{ Storage::url($menu->image) }}"
+          <div class="max-w-xs w-full mx-4 mb-2 rounded-lg shadow-lg">
+            <img class="w-full h-48 object-cover rounded-lg" src="{{ Storage::url($menu->image) }}"
               alt="Image" />
             <div class="px-6 py-4">
               <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">{{ $menu->name }}</h4>
-              <p class="leading-normal text-gray-700">{{ $menu->description }}</p>
+              <p class="leading-normal text-gray-700 h-16">{{ $menu->description }}</p>
             </div>
             <div class="flex items-center justify-between p-4">
               <form method="POST" action="{{ route('cart.add', $menu->id) }}">
