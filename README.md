@@ -3,7 +3,7 @@
 The website includes features for the **customers** and for the **admins** as well. The customers are able to reserve tables at the restaurant or order menu items if logged in. Payment is developed using Stripe (currently test account).
 The admin user can access the admin dashboard where these can be managed (add new, edit, delete): Categories, Menu Items, Tables, Reservations, Orders.
 
-*Deployed through fly.io: [Gustavo Pizzeria](https://gustavo-pizzeria.fly.dev/){:target="_blank"}*
+**Deployed through fly.io:** <a href="https://gustavo-pizzeria.fly.dev/">**Gustavo Pizzeria**</a>
 
 ## Features for the customer
 - customers have the opportunity to register or login
