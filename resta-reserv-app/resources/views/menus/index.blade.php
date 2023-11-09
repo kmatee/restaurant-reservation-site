@@ -6,14 +6,14 @@
               <img class="object-cover w-full h-48 rounded-lg" src="{{ Storage::url($menu->image) }}"
                 alt="{{$menu->name}}" />
               <div class="px-6 py-4">
-                <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">{{ $menu->name }}</h4>
+                <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase h-16">{{ $menu->name }}</h4>
                 <p class="leading-normal text-gray-700 h-16">{{ $menu->description }}</p>
               </div>
               <div class="flex items-center justify-between p-4">
                 <form method="POST" action="{{ route('cart.add', $menu->id) }}">
                   @csrf
                   <input type="hidden" name="menu_id" value="{{ $menu->id }}">
-                  <button type="submit" class="px-4 py-2 bg-green-600 text-green-50">Add to Cart</button>
+                  <button type="submit" class="px-4 py-2 bg-green-600 text-green-50 rounded-lg hover:bg-green-500 transition-color duration-300">Add to Cart</button>
                 </form>
                 <span class="text-xl text-green-600">{{ $menu->price }}</span>
               </div>
