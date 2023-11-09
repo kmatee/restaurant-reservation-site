@@ -21,7 +21,7 @@
     </div>
     <!-- End Main Hero Content -->
     <section class="px-2 py-32 bg-white md:px-0">
-      <div class="fixed top-80 left-10 flex">
+      <div class="fixed top-80 left-10 flex transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
         <a href="{{ route('cart.index') }}">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve"
                         class="w-6 h-6">
