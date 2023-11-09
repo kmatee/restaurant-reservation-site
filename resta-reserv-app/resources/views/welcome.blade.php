@@ -13,7 +13,7 @@
       <div class="grid place-items-center">
         <div class="md:w-auto pt-12">
           <a href="{{ route('reservations.step.one') }}" type="button"
-            class="px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 focus:outline-none">
+            class="px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 transition-color duration-300 delay-100 focus:outline-none">
             Make Reservation
           </a>
         </div>
