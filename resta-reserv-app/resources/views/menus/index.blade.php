@@ -15,7 +15,7 @@
                   <input type="hidden" name="menu_id" value="{{ $menu->id }}">
                   <button type="submit" class="px-4 py-2 bg-green-600 text-green-50 rounded-lg hover:bg-green-500 transition-color duration-300">Add to Cart</button>
                 </form>
-                <span class="text-xl text-green-600">{{ $menu->price }}</span>
+                <span class="text-xl text-green-600">{{ round($menu->price) }} Ft</span>
               </div>
             </div>
           @endforeach
