@@ -95,7 +95,12 @@ Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(fun
     Route::get('/item/{orderId}/{itemId}/edit', [ItemsController::class, 'edit'])->name('items.edit');
     Route::get('/item/{orderId}/{itemId}/update', [ItemsController::class, 'update'])->name('items.update');
     Route::delete('/item/{orderId}/{itemId}/delete', [ItemsController::class, 'destroy'])->name('items.delete');
+    Route::get('/link-storage', function (){
+        symlink(storage_path('/app/public'), public_path('storage'));
+        echo "Symlink Created. Thanks";
+    });
 
 });
+
 
 require __DIR__.'/auth.php';
