@@ -100,17 +100,17 @@
         <footer class="bg-gray-800 border-t border-gray-200">
             <div class="container flex flex-wrap items-center justify-center px-4 py-8 mx-auto lg:justify-between">
               <div class="flex flex-wrap justify-center pr-2">
-                <ul class="flex items-center space-x-4 text-white">
+                <ul class="flex items-center space-x-4 text-gray-200">
 
-                  <a href="{{route('home')}}">
+                  <a href="{{route('home')}}" class="hover:text-white transition-color duration-300">
                     <li>Home</li>
                   </a>
 
-                  <a href="{{route('about')}}">
+                  <a href="{{route('about')}}" class="hover:text-white transition-color duration-300">
                     <li>About</li>
                   </a>
 
-                  <a href="{{route('contact')}}">
+                  <a href="{{route('contact')}}" class="hover:text-white transition-color duration-300">
                     <li>Contact</li>
                   </a>
                   
