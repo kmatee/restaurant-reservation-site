@@ -27,6 +27,7 @@ class ReservationController extends Controller
 
     public function storeStepOne(Request $request)
     {
+        
         $validated = $request->validateWithBag('post',[
             'first_name' => ['required'],
             'last_name' => ['required'],
@@ -35,15 +36,19 @@ class ReservationController extends Controller
             'tel_number' => ['required'],
             'guest_number' => ['required'],
         ]);
+        
+        
 
         if (empty($request->session()->get('reservation'))) {
             $reservation = new Reservation();
             $reservation->fill($validated);
             $request->session()->put('reservation', $reservation);
+            //dd($request->session()->get('reservation'));
         } else {
             $reservation = $request->session()->get('reservation');
             $reservation->fill($validated);
             $request->session()->put('reservation', $reservation);
+            //dd($request->session()->get('reservation'));
         }
 
         return to_route('reservations.step.two');
