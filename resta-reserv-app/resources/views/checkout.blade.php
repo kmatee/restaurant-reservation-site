@@ -45,7 +45,7 @@
                 <input type="hidden" value="{{$orderDetails["address"]}}" name="address">
                 <input type="hidden" value="{{$items}}" name="items">
                 <input type="hidden" value="{{$total}}" name="total">
-                <button type="submit" class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider bg-blue-500 text-blue-50 hover:bg-blue-600 rounded-md">Pay Now</button>
+                <button type="submit" class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider bg-blue-500 text-white hover:bg-blue-600 rounded-md transition-color duration-300">Pay Now</button>
             </form>
         </div>
         
