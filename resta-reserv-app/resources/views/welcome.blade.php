@@ -13,7 +13,7 @@
       <div class="grid place-items-center">
         <div class="md:w-auto pt-12">
           <a href="{{ route('reservations.step.one') }}" type="button"
-            class="px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 transition-color duration-300 delay-100 focus:outline-none">
+            class="px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 transition-color duration-300 focus:outline-none">
             Make Reservation
           </a>
         </div>
@@ -87,7 +87,7 @@
               <form method="POST" action="{{ route('cart.add', $menu->id) }}">
                 @csrf
                 <input type="hidden" name="menu_id" value="{{ $menu->id }}">
-                <button type="submit" class="px-4 py-2 bg-green-600 text-green-50">Add to Cart</button>
+                <button type="submit" class="px-4 py-2 bg-green-600 text-green-50 rounded-lg hover:bg-green-500 transition-color duration-300">Add to Cart</button>
               </form>
               <span class="text-xl text-green-600">{{ $menu->price }}</span>
             </div>
