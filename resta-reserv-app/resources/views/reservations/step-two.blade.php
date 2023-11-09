@@ -39,9 +39,9 @@
 
                                 <div class="mt-6 p-4 flex justify-between">
                                     <a href="{{ route('reservations.step.one') }}"
-                                        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Previous</a>
+                                        class="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-md transition-color duration-300">Previous</a>
                                     <button type="submit"
-                                        class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Make
+                                        class="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-md transition-color duration-300">Make
                                         Reservation</button>
                                 </div>
                             </form>
