@@ -8,7 +8,7 @@
                 <div class="px-6 py-4">
 
                   <a href="{{ route('categories.show', $category->id) }}">
-                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 hover:text-green-400 uppercase">{{ $category->name }}</h4>
+                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-center text-green-600 hover:text-green-500 transition-color duration-300 uppercase ">{{ $category->name }}</h4>
                   </a>
                 </div>
               </div>
