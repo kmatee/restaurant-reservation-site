@@ -58,7 +58,7 @@
             </div>
           </div>
           <a href="{{route('checkout')}}">
-            <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+            <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-white hover:bg-blue-600 transition-color duration-300">Check out</button>
           </a>
         </div>
       </div>
