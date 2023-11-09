@@ -47,7 +47,7 @@
                     <!-- Mobile menu button -->
                     <div @click="isOpen = !isOpen" class="flex md:hidden">
                         <button type="button"
-                            class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                            class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400 transition-color duration-300"
                             aria-label="toggle menu">
                             <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
                                 <path fill-rule="evenodd"
