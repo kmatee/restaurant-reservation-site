@@ -20,26 +20,26 @@
               <div class="left-0 top-0 flex pl-2">
                 @if (!Auth::user())
                 <div>
-                  <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r pr-3 from-red-400 to-green-500 hover:text-green-400">Login</a>
+                  <a href="{{ route('login') }}" class="text-transparent bg-clip-text bg-gradient-to-r pr-3 from-red-400 to-green-500 hover:text-green-400 transition-color duration-300">Login</a>
                 </div>
                 <div>
-                  <a href="{{ route('register') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Register</a>
+                  <a href="{{ route('register') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300">Register</a>
                 </div>
                 @else
                   <form id="logout-form" method="POST" action="{{ route('logout') }}">
                     @csrf
                   </form>
                   <div>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 pr-3">Logout</a>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300 pr-3">Logout</a>
                   </div>
                   <div>
-                    <a href="{{ route('cart.index') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400">Shopping Cart</a>
+                    <a href="{{ route('cart.index') }}" class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300">Shopping Cart</a>
                   </div>
                 @endif
                 
               </div>
                 <div class="flex items-center justify-between">
-                    <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 md:text-2xl hover:text-green-400 pl-2"
+                    <a class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 md:text-2xl hover:text-green-400 transition-color duration-300 pl-2"
                         href="/">
                         Gustavo Pizzeria
                     </a>
@@ -61,13 +61,13 @@
                 <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
                 <div :class="isOpen ? 'flex pl-2' : 'hidden'"
                     class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
-                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400"
+                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300"
                         href="/">Home</a>
-                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400"
+                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300"
                         href="{{ route('categories.index') }}">Categories</a>
-                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400"
+                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300"
                         href="{{ route('menus.index') }}">Our Menu</a>
-                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400"
+                    <a class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-500 hover:text-green-400 transition-color duration-300"
                         href="{{ route('reservations.step.one') }}">Make Reservation</a>
     
                 </div>
